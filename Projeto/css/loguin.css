@@ -1,0 +1,13 @@
+body{
+    width: 100%;
+    height: 100%;
+    background: #FC9D9A;
+}
+
+.centralizar {
+    margin: auto;
+    background: #C8C8A9;
+    border: 3px solid #F9CDAD;
+    padding: 20px;
+  }
+    
