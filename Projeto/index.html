@@ -2,40 +2,23 @@
 
     <head>
         <script src="./js/jquery.js"></script>
-        <script src="./js/comportamento.js"></script>
-        <link rel="stylesheet" type="text/css" href="./css/loguin.css">
+        <script src="./js/login.js"></script>
+
     </head>
 
     <body>
         <form id="formularioLogin">
-            <table class="centralizar">
-                <tr>
-                    <td align="center">
-                        <h1>Bem vindo ao seu e-MailBoll!</h1>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center">
-                            <img src="./imagens/emoticon_0012.PNG" width="50px"alt="">
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center">
-                        <input id="lEmail" type="email" placeholder="E-Mail"/>
-                    </td>
-                </tr>
-                <tr >
-                    <td align="center">
-                        <input id="lSenha" type="password" placeholder="Senha"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center">
-                        <button id="bEntrar" >Entrar</button>
-                        <a id="aPagina" href="./paginas/Cadastro.html" >Criar uma nova conta.</a>
-                    </td>
-                </tr>
-            </table>
-        </form>
+
+            <h1>Bem vindo ao seu e-mail!</h1>
+            <input type="email" placeholder="Email" id="email"> <br><br>
+
+            <input type="password" placeholder="Senha" id="senha"><br><br>
+
+
+            <button type="submit" id="bLogar">Realizar Login</button>
+            <button id="bCadastrar">Para se cadastrar clique aqui!</button>
+            </form>
+
     </body>
+
 </html>
