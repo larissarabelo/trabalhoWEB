@@ -6,6 +6,10 @@ $(document).ready(function(){
     $("#bCadastrar").click(function(){
         cadastro();
     });
+
+    $("#bCancelar").click(function(){
+        window.location.href = "../index.html";
+    });
        
     function login(){
         var ajax_email      = $("#tEmail").val();
@@ -45,11 +49,14 @@ $(document).ready(function(){
     };
 
     function cadastro(){
-        var ajax_email      = $("#tEmail").val();
-        var ajax_senha      = $("#tSenha").val();
-        var ajax_confSenha  = $("#tConfSenha").val();
+        var ajax_nome       = $("cNome").val();
+        var ajax_sobrenome  = $("cSobrenome").val();
+        var ajax_email      = $("#cEmail").val();
+        var ajax_senha      = $("#cSenha").val();
+        var ajax_confSenha  = $("#cSenhaConf").val();
 
-        if(ajax_email==""||ajax_senha==""||ajax_confSenha==""){
+
+        if(ajax_nome==""||ajax_sobrenome==""||ajax_email==""||ajax_senha==""||ajax_confSenha==""){
             alert("Preencha todos os campos!");
         }
 
@@ -64,6 +71,8 @@ $(document).ready(function(){
                 url:        "../php/gravarXML.php",
 
                 data:{
+                    "nome": nome,
+                    "sobrenome": sobrenome,
                     "email": email,
                     "senha": senha
                 },

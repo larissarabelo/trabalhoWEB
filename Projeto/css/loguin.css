@@ -13,7 +13,8 @@ body{
 #tdBoll{
     font-size: 12px;
 }
-#bCadastrar {
+#bCadastrar{
+    cursor: grab;
     color:white;
     background: #BA6230;
     border: initial;
@@ -21,12 +22,14 @@ body{
 }
 
 #bCancelar {
+    cursor: grab;
     color:white;
     background: #BA6230;
     border: initial;
     border-radius: 10px;
 }
 #bEntrar {
+    cursor: grab;
     color:white;
     background: #BA6230;
     border: initial;
@@ -34,5 +37,5 @@ body{
 }
 #aPagina {
     color:black;
-    
+    cursor: grab;
 }
