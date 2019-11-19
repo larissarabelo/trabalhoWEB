@@ -1,9 +1,7 @@
 $(document).ready(function(){
 
-
-    $("voltar").click(function(){
+    $("#voltar").click(function(){
         alert();
-
         window.location.href="./paginas/entrada.html";
 
     });
@@ -31,25 +29,24 @@ $(document).ready(function(){
                     //ARRUMAR
                     case 1:
                         alert("Email enviado para a copia também.");
-                      //  window.location.href="./paginas/entrada.html";
-                        break;
+                        //window.location.href="./paginas/entrada.html";
+                    break;
                     case 2:
                     alert("Email enviado sem copia.");
                     break;
                      
-                  //  case -1:
-                            alert("2");
+                    //case -1:
+                        alert("2");
                         //alert("Acesso não autorizado.");
-                    //    break;
+                    //break;
                     case 3:
-                            alert("Nao existe remetente ou destinatario");
+                        alert("Nao existe remetente ou destinatario");
                         //window.location.href="../paginas/cadastro.html";
-                        break;
-                   // case -3:
-                     //       alert("4");
-
+                    break;
+                    //case -3:
+                        //alert("4");
                         //alert("Login ou Senha Incorretos.")
-                       // break;
+                    //break;
                 }
             }
         });
