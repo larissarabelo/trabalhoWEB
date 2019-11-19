@@ -15,6 +15,18 @@
                         $existe = true;
                         $arr_id = explode("_",$dir);
                         $id = $arr_id[1];
+                        $newUrl="../xml";
+                        //criar xml com a id do usuario atual
+
+                        $xml = new DOMDocument("1.0");
+                        $xml_memoria = $xml->createElement("memoria");
+
+                        $xml_id = $xml->createElement("id", $id);
+                        $xml_memoria->appendChild($xml_id);
+
+                        $xml->appendChild($xml_memoria);
+                        $xml->save($newUrl."/idAtual.xml");
+                       
                     }
                 }
             }

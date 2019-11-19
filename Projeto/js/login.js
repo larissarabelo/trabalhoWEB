@@ -28,6 +28,7 @@ $(document).ready(function(){
                             alert("Acesso não autorizado.");
                             break;
                         case -2:
+                            //nao há nenhum usuario
                             window.location.href="../paginas/cadastro.html";
                             break;
                         case -3:

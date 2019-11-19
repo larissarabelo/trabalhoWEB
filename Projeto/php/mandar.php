@@ -106,23 +106,8 @@ if($_POST){
             }
         }
         
-        
-        
-        //retornos
-        //if($cont == 2){
-        //    echo json_encode(-2);
-        //}/*else{
-          //  if($existe){
-          //      echo json_encode(1);
-            //}else{
-              //  echo json_encode(-3);
-            //}
-      //  }
-    //}else{
-        //echo json_encode(-1);
-    
     }else{
-    Header("Location: ../html/login.html");
+    Header("Location: ../html/entrada.html");
 
 
 }
