@@ -17,7 +17,7 @@ if($_POST){
                     //Achar proximo ID
                     $arrayId = explode("_",$dir);
                     $idAtual = $arrayId[1]; //PERGUNTAR CARLOS
-                    if(!isset($maior) || $maior < $id_atual){
+                    if(!isset($maior) || $maior < $idAtual){
                         $maior = $idAtual;
                     }
                 }

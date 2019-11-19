@@ -1,6 +1,14 @@
 $(document).ready(function(){
-    $("#enviar").click(function(){
 
+
+    $("voltar").click(function(){
+        alert();
+
+        window.location.href="./paginas/entrada.html";
+
+    });
+
+    $("#enviar").click(function(){
         $remetente=$("#remetente").val();
         $destinatario=$("#destinatario").val();
         $destinatarioCopia=$("#copia").val();
@@ -10,7 +18,7 @@ $(document).ready(function(){
         $.ajax({
             type:"post",
             dataType:"json",
-            url:"./php/mandar.php",
+            url:"../php/mandar.php",
             data:{
                 "remetente":$remetente,
                 "destinatario":$destinatario,
@@ -22,17 +30,22 @@ $(document).ready(function(){
                 switch(retorno){
                     //ARRUMAR
                     case 1:
-                        window.location.href="./paginas/entrada.html";
+                        alert("1");
+                      //  window.location.href="./paginas/entrada.html";
                         break;
-                    case -1:
-                        alert("Acesso não autorizado.");
-                        break;
+                  //  case -1:
+                            alert("2");
+                        //alert("Acesso não autorizado.");
+                    //    break;
                     case -2:
-                        window.location.href="../paginas/cadastro.html";
+                            alert("3");
+                        //window.location.href="../paginas/cadastro.html";
                         break;
-                    case -3:
-                        alert("Login ou Senha Incorretos.")
-                        break;
+                   // case -3:
+                     //       alert("4");
+
+                        //alert("Login ou Senha Incorretos.")
+                       // break;
                 }
             }
         });
