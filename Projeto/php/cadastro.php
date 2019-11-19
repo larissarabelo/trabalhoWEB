@@ -1,5 +1,5 @@
 <?php
-    if($_POST){
+if($_POST){
         extract($_POST);
         if(isset($nome,$sobrenome,$email,$senha)){
             $d = dir("../xml/");
