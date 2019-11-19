@@ -11,7 +11,7 @@ $(document).ready(function(){
     $("#enviar").click(function(){
         $remetente=$("#remetente").val();
         $destinatario=$("#destinatario").val();
-        $destinatarioCopia=$("#copia").val();
+        $copia=$("#copia").val();
         $assunto=$("#assunto").val();
         $mensagem=$("#mensagem").val();
 
@@ -22,7 +22,7 @@ $(document).ready(function(){
             data:{
                 "remetente":$remetente,
                 "destinatario":$destinatario,
-                "copia":$destinatarioCopia,
+                "copia":$copia,
                 "assunto":$assunto,
                 "mensagem":$mensagem
             },
@@ -30,15 +30,19 @@ $(document).ready(function(){
                 switch(retorno){
                     //ARRUMAR
                     case 1:
-                        alert("1");
+                        alert("Email enviado para a copia também.");
                       //  window.location.href="./paginas/entrada.html";
                         break;
+                    case 2:
+                    alert("Email enviado sem copia.");
+                    break;
+                     
                   //  case -1:
                             alert("2");
                         //alert("Acesso não autorizado.");
                     //    break;
-                    case -2:
-                            alert("3");
+                    case 3:
+                            alert("Nao existe remetente ou destinatario");
                         //window.location.href="../paginas/cadastro.html";
                         break;
                    // case -3:
