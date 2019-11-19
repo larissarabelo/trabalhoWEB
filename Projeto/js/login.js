@@ -2,14 +2,18 @@ $(document).ready(function(){
     $("#bCadastrar").click(function(){
         window.location.href="paginas/cadastro.html";
     });
+
     $("input").attr("required",true);
+
     $("form#formularioLogin").submit(function(){
         preenchido = true;
+
         $("input").each(function(id,input){
             if($(input).val()==""){
                 preenchido = false
             }
         });
+
         if(preenchido){
             $.ajax({
                 type:"post",
@@ -37,7 +41,8 @@ $(document).ready(function(){
                     }
                 }
             });
-        }else{
+        }
+        else{
             alert("Preencha todos os campos.");
         }
         return false;

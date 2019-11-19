@@ -1,38 +1,48 @@
 <?php
 if($_POST){
-        extract($_POST);
-        if(isset($nome,$sobrenome,$email,$senha)){
-            $d = dir("../xml/");
-            $existe = false;
-            $cont = 0;
-            while(($dir = $d->read()) !== false){
-                $cont++;
-                if($dir != "." && $dir != ".."){//o bicho é burro e acha q . e .. é diretorio
-                    //Pesquisa XML
-                    $str_xml = file_get_contents("../xml/".$dir."/dados.xml");
-                    $xml = simplexml_load_string($str_xml);
-                    if($xml->email == $email){
-                        $existe = true;
-                    }
+    extract($_POST);
+    if(isset($nome,$sobrenome,$email,$senha)){
+        $d = dir("../xml/");
+        $existe = false;
+        $cont = 0;
+
+        while(($dir = $d->read()) !== false){
+            $cont++;
+
+            if($dir != "." && $dir != ".."){//o bicho é burro e acha q . e .. é diretorio
+                //Pesquisa XML
+                $str_xml = file_get_contents("../xml/".$dir."/dados.xml");
+                $xml = simplexml_load_string($str_xml);
+
+                if($xml->email == $email){
+                    $existe = true;
+                }
+
                     //Achar proximo ID
                     $arrayId = explode("_",$dir);
                     $idAtual = $arrayId[1]; //PERGUNTAR CARLOS
+
                     if(!isset($maior) || $maior < $idAtual){
                         $maior = $idAtual;
                     }
                 }
             }
+
             if($cont == 2){
                 $maior = 0;
             }
+
             if($existe){
                 echo json_encode(-1);
-            }else{
+            }
+            else{
                 $url = "../xml/usuario_".($maior+1);
+
                 if(!file_exists($url)){
                     mkdir($url);
                     mkdir($url."/email");
                     $pastas = array("entrada","enviado");
+                    
                     foreach($pastas as $pasta){
                         mkdir($url."/email/".$pasta);
                     }
@@ -55,15 +65,18 @@ if($_POST){
                     $xml->save($url."/dados.xml");
                     if(file_exists($url."/dados.xml")){
                         echo json_encode(1);
-                    }else{
+                    }
+                    else{
                         echo json_encode(-2);
                     }
                 }
             }
-        }else{
+        }
+        else{
             Header("Location: ../html/cadastro.html"); //perguntar pq ele n usou o outro   
         }
-    }else{
+    }
+    else{
         Header("Location: ../html/cadastro.html");
     }
     exit();
