@@ -1,23 +1,21 @@
 <html>
-<head>
- 
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="../js/mandarEmail.js"></script>
-</head>
-<body>
+    <head>
     
-    <div>
-            De:       <input id="remetente" class="required" required> <br>
-            Para:       <input id="destinatario" class="required" required> <br>
-            CC:         <input id="copia">  <br>
-            Assunto:    <input id="assunto" class="required" required> <br>
-            Mensagem:   <br>
-                        <textarea id="mensagem" class="required" required></textarea> <br>
-
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="../js/mandarEmail.js"></script>
+    </head>
+    <body>
         
-    </div>
-    <button id="enviar" type="submit">Enviar</button>            <button id="voltar">Voltar</button>
+        <div>
+                Para:       <input id="destinatario" class="required" required> <br>
+                CC:         <input id="copia">  <br>
+                Assunto:    <input id="assunto" class="required" required> <br>
+                Mensagem:   <br>
+                            <textarea id="mensagem" class="required" required></textarea> <br>
 
-    <!--<div id="div_mostraEmail" style="width:600px;"></div>-->
-</body>
+            
+        </div>
+        <button id="enviar" type="submit">Enviar</button>            <button id="voltar">Voltar</button>
+
+    </body>
 </html>

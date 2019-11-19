@@ -1,6 +1,6 @@
 <?php
 
-    if($_POST){
+if($_POST){
         extract($_POST);
         if(isset($email,$senha)){
             $d = dir("../xml/");
@@ -29,27 +29,8 @@
                         $xml->save($newUrl."/idAtual.xml");
                        
                     }
-if($_POST){
-    extract($_POST);
-    if(isset($email,$senha)){
-        $d = dir("../xml/");
-        $contador = 0;
-        $existe = false;
 
-        while(($dir = $d->read()) !== false){
-            $contador++;
-            $url = "../xml/".$dir;
-
-            if(file_exists($url."/dados.xml")){
-                $str_xml = file_get_contents($url."/dados.xml");
-                $xml = simplexml_load_string($str_xml);
-
-                if($xml->email == $email && $xml->senha == $senha){
-                    $existe = true;
-                    $arr_id = explode("_",$dir);
-                    $id = $arr_id[1];
                 }
-            }
         }
 
         if($contador == 2){

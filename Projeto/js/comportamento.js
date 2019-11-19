@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $id=null;
+ /* $id=null;
 
         $.ajax({
             dataType:"json",
@@ -10,7 +10,7 @@ $(document).ready(function(){
             }
         });
 
-    
+    */
     
 $("#bNovaMensagem").click(function(){
     window.location.href="../paginas/mandarEmail.html";

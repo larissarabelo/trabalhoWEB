@@ -1,13 +1,27 @@
 $(document).ready(function(){
 
+
     $("#voltar").click(function(){
         alert();
-        window.location.href="./paginas/entrada.html";
+        window.location.href="../paginas/entrada.html";
 
     });
 
     $("#enviar").click(function(){
-        $remetente=$("#remetente").val();
+
+
+        //receber id:
+        $remetente=0;
+        $.ajax({
+            dataType:"json",
+            url:"../php/retornarId.php",
+            success:function(retorno){
+                $remetente=retorno;
+                alert("retorno"+retorno);
+
+            }
+        });
+        
         $destinatario=$("#destinatario").val();
         $copia=$("#copia").val();
         $assunto=$("#assunto").val();
@@ -60,3 +74,4 @@ $(document).ready(function(){
 
     });
 });
+

@@ -8,9 +8,9 @@ if($_POST){
         $urlReme="";
         $urlCopia="";
         $existeDest = false;
-        $existeReme = false;
         $existeCopia=false;
-
+        $idRemetente=null;
+        $emailRemetente="";
 
         while(($dir = $d->read()) !== false){
             $cont++;
@@ -25,21 +25,32 @@ if($_POST){
                    $urlDest=$url."/email/entrada/";
 
                 }
-                if($xml->email == $remetente){
+                $arr_id = explode("_",$dir);
+                $idAtualDoLooping = $arr_id[1];
+                if($idAtualDoLooping==$remetente){
                     //achar remetente
-                    $existeReme = true;
                     $urlReme=$url."/email/enviado/";
+                    
+                    $str_xml = file_get_contents($url."/dados.xml");
+                    $xml = simplexml_load_string($str_xml);
+                    $emailRemetente= $xml->nome;
+                    
+                   
                 }
 
                 if($xml->email == $copia){
                     //achar o copia
                     $existeCopia = true;
                     $urlCopia=$url."/email/entrada/";
+                    }
                 }
             }
-        }
+    }
+   
 
-        if($existeDest && $existeReme){
+
+
+        if($existeDest){
             if($existeCopia){
            
                 //enviar se existir copia
@@ -51,7 +62,7 @@ if($_POST){
                 $xml_desti = $xml->createElement("destinatario",$destinatario);
                 $xml_assunto = $xml->createElement("assunto",$assunto);
                 $xml_mensagem = $xml->createElement("mensagem",$mensagem);
-                $xml_remetente = $xml->createElement("remetente",$remetente);
+                $xml_remetente = $xml->createElement("remetente",$emailRemetente);
                 $xml_copia = $xml->createElement("copia",$copia);
     
                 $xml_envio->appendChild($xml_desti);
@@ -78,7 +89,7 @@ if($_POST){
                 $xml_desti = $xml->createElement("destinatario",$destinatario);
                 $xml_assunto = $xml->createElement("assunto",$assunto);
                 $xml_mensagem = $xml->createElement("mensagem",$mensagem);
-                $xml_remetente = $xml->createElement("remetente",$remetente);
+                $xml_remetente = $xml->createElement("remetente",$emailRemetente);
     
                 $xml_envio->appendChild($xml_desti);
                 $xml_envio->appendChild($xml_assunto);
@@ -93,33 +104,19 @@ if($_POST){
             }
         }
         
-    }else{
-    Header("Location: ../html/entrada.html");
-        else{
-            echo json_encode(3);
-            //deu ruim
-        }
-    }
-
-
-    //retornos
-    //if($cont == 2){
-    //  echo json_encode(-2);
-    //}
-    //else{
-    //  if($existe){
-    //      echo json_encode(1);
-    //  }
-    //  else{
-    //      echo json_encode(-3);
-    //  }
-    //}
-    //else{
-    //  echo json_encode(-1);
-    //}
     else{
-        Header("Location: ../html/login.html");
-    }
+        //destinario n existe
+    Header("Location: ../html/entrada.html");
+    }   
+
+  
+    
 }
+
+//post n existe
+else{
+    echo json_encode(3); 
+   }
+
 exit();
 ?>
