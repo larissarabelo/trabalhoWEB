@@ -29,19 +29,13 @@ if($_POST){
                     //achar remetente
                     $existeReme = true;
                     $urlReme=$url."/email/enviado/";
-
-
                 }
 
                 if($xml->email == $copia){
                     //achar o copia
                     $existeCopia = true;
                     $urlCopia=$url."/email/entrada/";
-
-
                 }
-
-
             }
         }
 
