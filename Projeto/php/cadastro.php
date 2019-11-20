@@ -97,11 +97,6 @@ if($_POST){
                     $xml->appendChild($xml_primeiro);
 
                     $xml->save($url."/email/enviado/1.xml");
-
-
-
-
-
                 }
             }
         }

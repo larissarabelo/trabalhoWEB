@@ -14,10 +14,6 @@ if($_POST){
     $idRemetente=null;
     $emailRemetente="";
 
-    
-
-
-
     //ler quantas pastas tem no diretorio  XML de usuário existentes
     while(($dir = $d->read()) !== false){
 
