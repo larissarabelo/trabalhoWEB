@@ -1,39 +1,52 @@
 <html>
     <head>
-        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script src="./js/cadastro.js"></script>
+        
+        <meta charset="utf-8">
         <script src="../js/jquery.js"></script>
         <script src="../js/email.js"></script>
         <link rel="stylesheet" type="text/css" href="../css/email.css">
+        
     </head>
 
     <body>
-        <table width="100%">
-            <td>
-                <tr>
-                    <button id="bMenu">O</button>
-                </tr>
-            </td>
-            <td>
-                <tr>
-                    <input id="tPesquisa" type="text" placeholder="Pesquisar..."/>
-                </tr>
-            </td>
-            <td>
-                <tr>
-                    <button id="bLupa">O</button>
-                </tr>
-            </td>
-            <td>
-                <tr>
-                    <a id="aNome">Nome</a>
-                </tr>
-            </td>
-            <td>
-                <tr>
-                    <button id="bConta">O</button>
-                </tr>
-            </td>
+
+        <nav class="menu">
+            <ul>
+                <li><img href="#" src="..\imagens\logo.png"></li>
+                
+                <li><a href="#" id="caixaEntrada">Caixa de Entrada</a>
+                    <ul>
+                        <li><a href="#" id="enviados"    >Itens Enviados</a></li>
+                        <li><a href="#" id="favoritos"   >Favoritos</a></li>
+                        <li><a href="#" id="rascunho"    >Rascunho</a></li>
+                        <li><a href="#" id="lixo"        >Lixo Eletronico</a></li>
+                        <li><a href="#" id="excluidos"   >Itens Excluidos</a></li>
+                        <li><a href="#" id="arquivoMorto">Arquivo Morto</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="#" id="bNovaMensagem">+ Nova Mensagem</a></li>
+
+                <li><a href="#" id="conta" >Usuario</a>
+                    <ul>
+                        <li><a href="#" id="sair">Sair</a></li>
+                    </ul>
+                </li>
+                
+                <li><input  href="#" id="barraPesquisa" placeholder="Pesquisar"></li>
+                <li><button href="#" id="bPesquisa"></button></li>
+                
+            </ul>
+        </nav>
+        <table class="emails" align="center" border="2px">
+            <thead>
+                <tr><td colspan="3" id="Titulo"><h2>Caixa de Entrada</h2></td></tr>
+                <tr><td><a>Remetente</a></td> <td><a>Assunto</a></td> <td><a>Resumo</a></td> </tr>
+            </thead>
+            <tbody id="mensagens">
+                    <tr> <td>TesteTeste@eMailBoll.com</td> <td>TesteTeste</td> <td>TesteTesteTesteTesteTesteTesteTesteTesteTeste</td> </tr>
+            </tbody>
         </table>
     </body>
 </html>
+    

@@ -1,21 +1,18 @@
 $(document).ready(function(){
 
     $("#caixaEntrada").click(function(){
-
-        
-
         $.ajax({
             type:"post",
             dataType:"json",
-            url:"./php/receber.php",
+            url:"../php/receber.php",
             data:{
                 "remetente": remetente,
                 "asunto": asunto,
-                "meensagem": mensagem
+                "mensagem": mensagem
             },
             success:function(retorno){
                 for(e=0; e<=retorno.leight; e++){
-                    var table = document.getElementById("emails");
+                    var table = document.getElementById("mensagens");
                     var row = table.insertRow(e);
                     row.innerHTML = "<tr><td>"+
                     remetente+      "</td><td>"+
@@ -24,12 +21,29 @@ $(document).ready(function(){
                 };
             }
         });
-        
     });
 
     $("#enviados").click(function(){
-
-
+        $.ajax({
+            type:"post",
+            dataType:"json",
+            url:"../php/mandar.php",
+            data:{
+                "destinatario": destinatario,
+                "asunto": asunto,
+                "mensagem": mensagem
+            },
+            success:function(retorno){
+                for(e=0; e<=retorno.leight; e++){
+                    var table = document.getElementById("mensagens");
+                    var row = table.insertRow(e);
+                    row.innerHTML = "<tr><td>"+
+                    remetente+      "</td><td>"+
+                    assunto+        "</td><td>"+
+                    mensagem+       "</td></tr>";
+                };
+            }
+        });
     });
 
     $("#favoritos").click(function(){
@@ -45,8 +59,7 @@ $(document).ready(function(){
     });
 
     $("#excluidos").click(function(){
-        
-        
+        alert("Nao funciona");
     });
     
     $("#arquivoMorto").click(function(){
@@ -66,6 +79,7 @@ $(document).ready(function(){
     });
 
     $("#barraPesquisa").click(function(){
+        
     });
 
     $("#bPesquisa").click(function(){

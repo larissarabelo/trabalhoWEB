@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    $("input").attr("required",true);
+    $("textarea").attr("required",true);
 
     $("#voltar").click(function(){
         window.location.href="../paginas/entrada.html";
@@ -46,6 +48,14 @@ function enviar(id){
                     alert("Nao existe remetente ou destinatario. Por favor tente novamente");
                     break;           
             
+        //receber id:
+        $remetente=0;
+        $.ajax({
+            dataType:"json",
+            url:"../php/retornarId.php",
+            success:function(retorno){
+                $remetente=retorno;
+                alert("retorno"+retorno);
             }
         }
     });

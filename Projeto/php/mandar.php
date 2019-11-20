@@ -57,6 +57,7 @@ if($_POST){
                 //achar remetente
                 $str_xml = file_get_contents($url."/dados.xml");
                 $xml = simplexml_load_string($str_xml);
+
                 $emailRemetente= $xml->nome;
                
                 $contEmailsEnviado = -1;
@@ -66,10 +67,28 @@ if($_POST){
                 // loop que busca todos os arquivos até que não encontre mais nada
                 while (false !== ($filename = readdir($dh))) {
                     $contEmailsEnviado++;
+
+                if($xml->email == $destinatario){
+                    $existeDest = true;
+                    //achar destinatario
+                   $urlDest=$url."/email/entrada/";
+
+                }
+                $arr_id = explode("_",$dir);
+                $idAtualDoLooping = $arr_id[1];
+                if($idAtualDoLooping==$remetente){
+                    //achar remetente
+                    $urlReme=$url."/email/enviado/";
+                    
+                    $str_xml = file_get_contents($url."/dados.xml");
+                    $xml = simplexml_load_string($str_xml);
+                    $emailRemetente= $xml->nome;
+
                 }
 
                 $urlReme=$url."/email/enviado/$contEmailsEnviado";
             }
+
 
             if($xml->email == $copia){
                 //achar o copia
@@ -91,6 +110,8 @@ if($_POST){
             }
         }
     
+
+    }
 
         if($existeDest){
             if($existeCopia){

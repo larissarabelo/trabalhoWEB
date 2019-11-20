@@ -1,5 +1,11 @@
 <html>
-    <head>
+<head>
+ 
+    <script src="../js/jquery.js"></script>
+    <script src="../js/mandarEmail.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/mandarEmail.css">
+</head>
+<body>
     
         <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
         <script src="../js/mandarEmail.js"></script>
@@ -30,4 +36,37 @@
         <button id="enviar" type="button">Enviar</button><button id="voltar">Voltar</button>
 
     </body>
+
+    <div>
+        <table class="table" align="center">
+            <tr>
+                <td>De:</td>
+                <td><input id="remetente" placeholder="exemple@eMailBoll.com"></td>
+            </tr>
+            <tr>
+                <td>Para:</td>
+                <td><input id="destinatario" placeholder="exemple@eMailBoll.com"></td>
+            </tr>
+            <tr>
+                <td>CC:</td>
+                <td><input id="copia" placeholder="exemple@eMailBoll.com"></td>
+            </tr>
+            <tr>
+                <td>Assunto:</td>
+                <td><input id="assunto"></td>
+            </tr>
+            <tr>
+                <td>Mensagem:</td>
+                <td><textarea id="mensagem"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button id="enviar" type="submit">Enviar</button>
+                    <button id="voltar">Voltar</button>
+                </td>
+            </tr>
+        </table> 
+    </div>
+</body>
 </html>

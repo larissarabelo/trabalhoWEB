@@ -1,7 +1,3 @@
-main{
-margin: 20px 0;
-padding: 0px;
-}
 .menu{
     width: 100%;
     height: 30px;
@@ -9,7 +5,6 @@ padding: 0px;
     font-family: fantasy;
     border-radius: 30px;
 }
-
 .menu a{
     margin-left: 40px;
     padding: 5;
@@ -95,3 +90,37 @@ padding: 0px;
     margin: 0px;
     background-color: #ECE5CE;
 }
+
+.emails{
+    padding: 6px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #F1D4AF;
+    height: 10px;
+    border-style: none;
+    font-family: fantasy;
+}
+
+.emails thead tr td{
+    background-color: #774F38;
+    color: #ECE5CE;
+    
+}
+.emails thead tr #titulo{
+    padding-top: 20px;
+}
+
+.emails tr td{
+    height: 30px;
+    text-align: center;
+    border-style: solid;
+    border-color:  #774F38;
+}
+
+.emails tbody tr:hover {
+    cursor: Pointer;
+    background-color: #E08E79;
+}
+
+
+
