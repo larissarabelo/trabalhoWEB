@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 
     $("#voltar").click(function(){
-        window.location.href="../paginas/entrada.html";
+        window.location.href="../paginas/email.html";
     });
     $("#enviar").click(function(){
         acharUser();
@@ -36,11 +36,11 @@ function enviar(id){
                 //ARRUMAR
                 case 1:
                   alert("Email enviado para a copia também.");
-                  window.location.href="../paginas/entrada.html";
+                  window.location.href="../paginas/email.html";
                     break;
                 case 2:
                     alert("Email enviado sem copia.");
-                    window.location.href="../paginas/entrada.html";
+                    window.location.href="../paginas/email.html";
                     break;
                 case 3:
                     alert("Nao existe remetente ou destinatario. Por favor tente novamente");
