@@ -1,19 +1,61 @@
 <html>
 
     <head>
-            <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+            <script src="../js/jquery.js"></script>
             <script src="../js/cadastro.js"></script>
+            <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
     </head>
 
     <body>
     <form>
-            Nome:<input type="text" id="nome" size="35"><br><br>
-            Sobrenome:<input type="text" id="sobrenome" size="35"><br><br>
-            Email:<input type="text" id="email" size="35"><br><br>
-            Senha:<input type="password" id="senha" size="35"><br><br>
-            Confirmar senha:<input type="password" id="confSenha" size="35"><br><br>
-        <button id="cadastrar">Salvar</button> <button id="voltar">Voltar</button>
-    
-    </form>    
+        <table class="table" align="center"> 
+            <form>
+                <tr>
+                    <td colspan="3"><img src="..\imagens\logo.png"></td>      
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">Bem Vindo ao e-MailBoll</td>      
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Nome:</td>      
+                    <td colspan="2"><input type="text" id="nome" size="35"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Sobrenome:</td> 
+                    <td colspan="2"><input type="text" id="sobrenome" size="35"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>     
+                    <td><input type="text" id="email" size="35"></td>
+                    <td>@eMailBoll.com</td>
+                </tr>
+                <tr>
+                    <td>Senha:</td>     
+                    <td colspan="2"><input type="password" id="senha" size="35"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Confirmar senha:</td>
+                    <td colspan="2"><input type="password" id="confSenha" size="35"></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="3"> 
+                        <button id="cadastrar">Salvar</button>
+                        <button id="voltar">Voltar</button>
+                    </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </form>
+        </table>
     </body>
 </html>

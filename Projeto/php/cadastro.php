@@ -52,12 +52,12 @@ if($_POST){
                     $xml_dados = $xml->createElement("dados");
 
                     $xml_nome = $xml->createElement("nome",$nome);
-                    $xml_sobren = $xml->createElement("sobrenome",$sobrenome);
-                    $xml_email = $xml->createElement("email",$email);
+                    $xml_sobrenome = $xml->createElement("sobrenome",$sobrenome);
+                    $xml_email = $xml->createElement("email",$email+"@eMaillBoll.com");
                     $xml_senha = $xml->createElement("senha",$senha);
  
                     $xml_dados->appendChild($xml_nome);
-                    $xml_dados->appendChild($xml_sobren);
+                    $xml_dados->appendChild($xml_sobrenome);
                     $xml_dados->appendChild($xml_email);
                     $xml_dados->appendChild($xml_senha);
 

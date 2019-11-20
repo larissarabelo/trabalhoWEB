@@ -8,8 +8,6 @@ $(document).ready(function(){
     });
 
     $("#enviar").click(function(){
-
-
         //receber id:
         $remetente=0;
         $.ajax({

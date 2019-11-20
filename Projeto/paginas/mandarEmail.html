@@ -1,21 +1,42 @@
 <html>
-    <head>
+<head>
+ 
+    <script src="../js/jquery.js"></script>
+    <script src="../js/mandarEmail.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/cadastro.css">
+</head>
+<body>
     
-        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script src="../js/mandarEmail.js"></script>
-    </head>
-    <body>
-        
-        <div>
-                Para:       <input id="destinatario" class="required" required> <br>
-                CC:         <input id="copia">  <br>
-                Assunto:    <input id="assunto" class="required" required> <br>
-                Mensagem:   <br>
-                            <textarea id="mensagem" class="required" required></textarea> <br>
-
-            
-        </div>
-        <button id="enviar" type="submit">Enviar</button>            <button id="voltar">Voltar</button>
-
-    </body>
+    <div>
+        <table class="table"align="center">
+            <tr>
+                <td>De:</td>
+                <td><input id="remetente" class="required" required></td>
+            </tr>
+            <tr>
+                <td>Para:</td>
+                <td><input id="destinatario" class="required" required></td>
+            </tr>
+            <tr>
+                <td>CC:</td>
+                <td><input id="copia"></td>
+            </tr>
+            <tr>
+                <td>Assunto:</td>
+                <td><input id="assunto" class="required" required></td>
+            </tr>
+            <tr>
+                <td>Mensagem:</td>
+                <td><textarea id="mensagem" class="required" required></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button id="enviar" type="submit">Enviar</button>
+                    <button id="voltar">Voltar</button>
+                </td>
+            </tr>
+        </table> 
+    </div>
+</body>
 </html>

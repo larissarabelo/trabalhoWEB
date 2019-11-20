@@ -34,8 +34,6 @@ if($_POST){
                     $str_xml = file_get_contents($url."/dados.xml");
                     $xml = simplexml_load_string($str_xml);
                     $emailRemetente= $xml->nome;
-                    
-                   
                 }
 
                 if($xml->email == $copia){
@@ -46,10 +44,6 @@ if($_POST){
                 }
             }
     }
-   
-
-
-
         if($existeDest){
             if($existeCopia){
            
