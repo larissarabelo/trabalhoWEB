@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    $("input").attr("required",true);
+    $("textarea").attr("required",true);
 
     $("#voltar").click(function(){
         alert();
