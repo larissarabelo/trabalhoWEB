@@ -4,15 +4,15 @@ $(document).ready(function(){
         $.ajax({
             type:"post",
             dataType:"json",
-            url:"./php/receber.php",
+            url:"../php/receber.php",
             data:{
                 "remetente": remetente,
                 "asunto": asunto,
-                "meensagem": mensagem
+                "mensagem": mensagem
             },
             success:function(retorno){
                 for(e=0; e<=retorno.leight; e++){
-                    var table = document.getElementById("emails");
+                    var table = document.getElementById("mensagens");
                     var row = table.insertRow(e);
                     row.innerHTML = "<tr><td>"+
                     remetente+      "</td><td>"+
@@ -27,15 +27,15 @@ $(document).ready(function(){
         $.ajax({
             type:"post",
             dataType:"json",
-            url:"./php/receber.php",
+            url:"../php/mandar.php",
             data:{
-                "remetente": remetente,
+                "destinatario": destinatario,
                 "asunto": asunto,
-                "meensagem": mensagem
+                "mensagem": mensagem
             },
             success:function(retorno){
                 for(e=0; e<=retorno.leight; e++){
-                    var table = document.getElementById("emails");
+                    var table = document.getElementById("mensagens");
                     var row = table.insertRow(e);
                     row.innerHTML = "<tr><td>"+
                     remetente+      "</td><td>"+
@@ -44,7 +44,6 @@ $(document).ready(function(){
                 };
             }
         });
-
     });
 
     $("#favoritos").click(function(){
