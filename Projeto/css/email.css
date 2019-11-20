@@ -117,10 +117,6 @@
     border-color:  #774F38;
 }
 
-.emails tbody tr{
-    
-}
-
 .emails tbody tr:hover {
     cursor: Pointer;
     background-color: #E08E79;
