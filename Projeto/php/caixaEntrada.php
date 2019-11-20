@@ -3,28 +3,38 @@
     if($_POST){
         extract($_POST);
         if(isset($userId)){
-            $d = dir("../xml/");
-            $contador = 0;
-            $existemEmails = false;
+            $d = dir("../xml/usuario_".$userId."/email/entrada/");
+            $cont = 0;
+            $url="";    
+            $emails=  array();
+        
+        
+            //ler quantas pastas tem no diretorio  XML de usuário existentes
             while(($dir = $d->read()) !== false){
-                $contador++;
-                $url = "../xml/usuario_"$userId."email/entrada".$dir;
-                if(file_exists($url."/email/entrada/caixa.xml")){
-                    $str_xml = file_get_contents($url."/dados.xml");
-                    $xml = simplexml_load_string($str_xml);
-                    array_push.($emails, $xml);
-                
-                }
-            }
-            $quantidade= count($emails);
-            foreach(var i=0; i<$quantidade;i++){
-                echo($emails[i]);
+        
+               
+               $url = $dir;
+               $contEmailsEntrada = 0;
+               $diretorio = $url;
+               // esse seria o "handler" do diretório
+               $dh = opendir($diretorio);
+               // loop que busca todos os arquivos até que não encontre mais nada
+               while (false !== ($filename = readdir($dh))) {
+                   $contEmailsEntrada++;
 
-            }    
 
-        }else{//userId n existe
+                   $str_xml = file_get_contents($url.$contEmailsEntrada".xml");
+                   $xml = simplexml_load_string($str_xml);
+
+                   array_push($emails,$xml);
+                   
+               }
+
 
         }
+
+        echo json_encode($emails);
+    }
     }
 
 ?>

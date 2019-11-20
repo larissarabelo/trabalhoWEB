@@ -27,27 +27,56 @@ function receberDados(id){
             }
         });
     }
-    
 function acharUser (){
+    alert();
  
-    var id=0;
-    $.ajax({
-            type:"post",
-            dataType:"json",
-            url:"../php/retornarId.php",
-            success:function(retorno){
-                id=retorno;
-                receberDados(id);
+        var id=0;
+        $.ajax({
+                type:"post",
+                dataType:"json",
+                url:"../php/retornarId.php",
+                success:function(retorno){
+                    id=retorno;
+                    listar(id);
+    
+                }
+                
+            });
+    
+    }
 
-            }
+
+function listar(id){
+
+    $user=id;
+    $.ajax({
+        type:"post",
+        dataType:"json",
+        url:"../php/caixaEntrada.php",
+        data:{
+            "user":$user
+        },
+        success:function(retorno){
+            alert("");
+            $("mensagens").append("<tr> <td>Teste@eMailBoll.com</td> <td>Teste</td> <td>Teste2</td></tr>");
+            console.log(retorno);
+            //  tratarDados(retorno);        
             
+            }
         });
 
 }
+/*
+function tratarDados(retorno){
+    tamanho = retorno.length;
+    text = "<ul>";
 
-
-function listarUsers(){
-
+    for (i = 0; i < tamanho; i++) {
+        text += "<li>" + retorno[i].nom + "</li>";
+      }
+      text += "</ul>";
 
 
 }
+
+*/

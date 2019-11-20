@@ -1,27 +1,35 @@
 $(document).ready(function(){
 
     $("#caixaEntrada").click(function(){
+
+        
+
         $.ajax({
             type:"post",
             dataType:"json",
-            url:"../php/caixaEntrada.php",
+            url:"./php/receber.php",
             data:{
                 "remetente": remetente,
-                "assunto": assunto,
-                "mensagem": mensagem
+                "asunto": asunto,
+                "meensagem": mensagem
             },
             success:function(retorno){
                 for(e=0; e<=retorno.leight; e++){
-                    $("#mensagens").append("<tr><td>"
-                    +remetente+"</td><td>"
-                    +assunto+"</td><td>"
-                    +mensagem+"</td></tr>");
+                    var table = document.getElementById("emails");
+                    var row = table.insertRow(e);
+                    row.innerHTML = "<tr><td>"+
+                    remetente+      "</td><td>"+
+                    assunto+        "</td><td>"+
+                    mensagem+       "</td></tr>";
                 };
             }
         });
+        
     });
 
     $("#enviados").click(function(){
+
+
     });
 
     $("#favoritos").click(function(){
@@ -37,7 +45,8 @@ $(document).ready(function(){
     });
 
     $("#excluidos").click(function(){
-        alert("Nao funciona");
+        
+        
     });
     
     $("#arquivoMorto").click(function(){
@@ -57,7 +66,6 @@ $(document).ready(function(){
     });
 
     $("#barraPesquisa").click(function(){
-        
     });
 
     $("#bPesquisa").click(function(){

@@ -26,7 +26,7 @@ $(document).ready(function(){
                 success:function(retorno){
                     switch(retorno){
                         case 1:
-                            window.location.href="./paginas/entrada.html";
+                            window.location.href="../paginas/email.html";
                             break;
                         case -1:
                             alert("Acesso não autorizado.");
