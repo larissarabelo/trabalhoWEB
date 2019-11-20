@@ -2,8 +2,6 @@ $(document).ready(function(){
 
     $("#caixaEntrada").click(function(){
 
-        
-
         $.ajax({
             type:"post",
             dataType:"json",
@@ -24,7 +22,6 @@ $(document).ready(function(){
                 };
             }
         });
-        
     });
 
     $("#enviados").click(function(){

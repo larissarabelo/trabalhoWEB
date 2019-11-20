@@ -26,14 +26,14 @@ $(document).ready(function(){
                 success:function(retorno){
                     switch(retorno){
                         case 1:
-                            window.location.href="../paginas/email.html";
+                            window.location.href="./paginas/email.html";
                             break;
                         case -1:
                             alert("Acesso não autorizado.");
                             break;
                         case -2:
                             //nao há nenhum usuario
-                            window.location.href="../paginas/cadastro.html";
+                            window.location.href="./paginas/cadastro.html";
                             break;
                         case -3:
                             alert("Login ou Senha Incorretos.")

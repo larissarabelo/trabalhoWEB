@@ -1,5 +1,4 @@
 <?php
-
 if($_POST){
 
     extract($_POST);
@@ -14,24 +13,18 @@ if($_POST){
     $idRemetente=null;
     $emailRemetente="";
 
-    
-
-
-
     //ler quantas pastas tem no diretorio  XML de usuário existentes
     while(($dir = $d->read()) !== false){
 
         $cont++;
         $url = "../xml/".$dir;
 
-      
         //email de entrada
         if(file_exists($url."/email/entrada")){
             //
-
             $str_xml = file_get_contents($url."/dados.xml");
             $xml = simplexml_load_string($str_xml);
-            
+
             //verificar quem é o destinatario e colocar na sua pasta
             if($xml->email == $destinatario){
                 $existeDest = true;
@@ -44,9 +37,7 @@ if($_POST){
                 while (false !== ($filename = readdir($dh))) {
                     $contEmailsEntrada++;
                 }
-
                 $urlDest=$url."/email/entrada/$contEmailsEntrada";
-
             }
             
             //verificar quem é o do remetente
@@ -67,7 +58,6 @@ if($_POST){
                 while (false !== ($filename = readdir($dh))) {
                     $contEmailsEnviado++;
                 }
-
                 $urlReme=$url."/email/enviado/$contEmailsEnviado";
             }
 
@@ -86,11 +76,9 @@ if($_POST){
                 while (false !== ($filename = readdir($dh))) {
                     $contEmailsCopia++;
                 }
-
                 $urlCopia=$url."/email/entrada/$contEmailsCopia";
             }
         }
-    
 
         if($existeDest){
             if($existeCopia){
@@ -118,8 +106,6 @@ if($_POST){
                 $xml->save($urlReme.".xml");
                 $xml->save($urlCopia.".xml");
 
-                
-    
             }
             else{
                 //enviar sem copia:
@@ -141,19 +127,18 @@ if($_POST){
                 $xml->save($urlDest.".xml");
                 $xml->save($urlReme.".xml");
 
-                
-
             }
         }
     }
-     
+
     if ($existeCopia){
         echo json_encode(1);
     }else{
         echo json_encode(2);
     }
 
-}else{
+}
+else{
   echo json_encode(3);
 }
 ?>

@@ -37,10 +37,12 @@ $(document).ready(function(){
                         }
                     }
                 });
-            }else{
+            }
+            else{
                 alert("Senha diferente de Confirmar de Senha.");
             }
-        }else{
+        }
+        else{
             alert("Todos os campos devem ser preenchidos.");
         }
         return false;

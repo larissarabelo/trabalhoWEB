@@ -1,9 +1,9 @@
 $(document).ready(function(){
-        acharUser();
+    acharUser();
+
     $("#bNovaMensagem").click(function(){
         window.location.href="../paginas/mandarEmail.html";
-
-        });
+    });
 
 });
 
@@ -21,30 +21,25 @@ function receberDados(id){
         success:function(retorno){
             for(var i=0; i<retorno.length;i++){
             retornoPHP.push(retorno[i]);
-        }
-                 
-        
             }
-        });
-    }
+        }
+    });
+}
 function acharUser (){
     alert();
  
-        var id=0;
-        $.ajax({
-                type:"post",
-                dataType:"json",
-                url:"../php/retornarId.php",
-                success:function(retorno){
-                    id=retorno;
-                    listar(id);
-    
-                }
+    var id=0;
+    $.ajax({
+        type:"post",
+        dataType:"json",
+        url:"../php/retornarId.php",
+        success:function(retorno){
+            id=retorno;
+            listar(id);
+        }
                 
-            });
-    
-    }
-
+    });
+}
 
 function listar(id){
 
@@ -60,11 +55,9 @@ function listar(id){
             alert("");
             $("mensagens").append("<tr> <td>Teste@eMailBoll.com</td> <td>Teste</td> <td>Teste2</td></tr>");
             console.log(retorno);
-            //  tratarDados(retorno);        
-            
-            }
-        });
-
+            //  tratarDados(retorno);         
+        }
+    });
 }
 /*
 function tratarDados(retorno){
