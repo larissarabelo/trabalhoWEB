@@ -33,7 +33,6 @@ function enviar(id){
         success:function(retorno){
             console.log(retorno);
             switch(retorno){
-                //ARRUMAR
                 case 1:
                   alert("Email enviado para a copia também.");
                   window.location.href="../paginas/email.html";

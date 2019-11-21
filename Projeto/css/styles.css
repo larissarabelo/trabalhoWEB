@@ -1,0 +1,11 @@
+body{
+    background-color: rgb(170, 220, 248);
+
+}
+
+#logar{
+
+border: 5px solid rgb(170, 125, 248);
+background-color: rgb(170, 125, 248);
+color: black;
+}

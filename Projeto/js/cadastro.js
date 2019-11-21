@@ -26,7 +26,7 @@ $(document).ready(function(){
                         switch(retorno){
                             case 1:
                                 alert("USUARIO CADASTRADO COM SUCESSO");
-                                window.location.href="email.html";
+                                window.location.href="entrada.html";
                                 break;
                             case -1:
                                 alert("USUARIO JA CADASTRADO NO SISTEMA");

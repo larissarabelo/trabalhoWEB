@@ -1,28 +1,8 @@
 $(document).ready(function(){
 
-    $("#caixaEntrada").click(function(){
-
-        $.ajax({
-            type:"post",
-            dataType:"json",
-            url:"../php/mandar.php",
-            data:{
-                "remetente": remetente,
-                "assunto": assunto,
-                "meensagem": mensagem
-            },
-            success:function(retorno){
-                for(e=0; e<=retorno.leight; e++){
-                    $("#mensagens").append("<tr><td>"+
-                    remetente+      "</td><td>"+
-                    assunto+        "</td><td>"+
-                    mensagem+       "</td></tr>");
-                };
-            }
-        });
-    });
-
+    acharUser();
     $("#enviados").click(function(){
+        alert("Nao funciona");
 
     });
 
@@ -67,3 +47,47 @@ $(document).ready(function(){
     });
     
 });
+
+
+function acharUser(){
+
+    var id=0;
+    $.ajax({
+            type:"post",
+            dataType:"json",
+            url:"../php/retornarId.php",
+            success:function(retorno){
+                //console.log(retorno);
+                id=retorno;
+                listar(id);
+
+            }
+            
+        });
+
+
+
+}
+
+function listar(id){
+
+    $userId=id;
+    $.ajax({
+        type:"post",
+        dataType:"json",
+        url:"../php/caixaEntrada.php",
+        data:{
+            userId: $userId
+        },
+        success:function(retorno){
+            console.log(retorno);
+            console.log("blz");
+            for(e=0; e<=retorno.leight; e++){
+                $("#mensagens").append("<tr><td>"+
+                retorno.nome+      "</td><td>"+
+                retorno.assunto+        "</td><td>"+
+                retorno.mensagem+       "</td></tr>");
+            };
+        }
+    });
+}

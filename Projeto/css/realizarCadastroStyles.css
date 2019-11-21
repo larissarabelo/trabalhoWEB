@@ -1,0 +1,33 @@
+h1, table{
+    padding-left:25%;
+    padding-top: 10px;
+    padding-bottom: 10 px;
+    border: solid 1pz #CCC;
+    border-radius: 2px;
+    font-family: Arial;
+    margin-top: 3px;
+    outline: none; 
+}
+
+input{
+    text-align: center;
+    height: 35px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+button{
+    background-color: #008CBA;
+    color:white;
+    font-size: 16px;
+    border: none;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.error{
+    border: 2px solid red ;
+
+}
